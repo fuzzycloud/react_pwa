@@ -8,7 +8,7 @@ function baseUrl() {
 	if (base === "development") {
 		return "http://localhost:5137/"
 	}
-	return "https://server.societyzen.app/";
+	return "https://fuzzycloud.github.io/react_pwa/";
 }
 
 function App() {
