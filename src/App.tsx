@@ -5,7 +5,10 @@ import reactLogo from "./assets/react.svg";
 
 function baseUrl() {
 	const base = import.meta.env.MODE;
-	return base;
+	if (base === "development") {
+		return "http://localhost:5137/"
+	}
+	return "https://server.societyzen.app/";
 }
 
 function App() {
