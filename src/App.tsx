@@ -3,12 +3,18 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import reactLogo from "./assets/react.svg";
 
+function baseUrl() {
+	const base = import.meta.env.MODE;
+	return base;
+}
+
 function App() {
 	const [count, setCount] = useState(0);
 
 	return (
 		<>
 			<div>
+				Mode: {baseUrl()}
 				<a href="https://vitejs.dev" target="_blank" rel="noreferrer">
 					<img src={viteLogo} className="logo" alt="Vite logo" />
 				</a>
