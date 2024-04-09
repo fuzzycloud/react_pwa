@@ -1,10 +1,21 @@
 import react from "@vitejs/plugin-react-swc";
-import { defineConfig } from "vite";
+import { Plugin, defineConfig } from "vite";
 import { VitePWA } from "vite-plugin-pwa";
+import replace from '@rollup/plugin-replace'
+
+const replaceOptions = { __DATE__: new Date().toISOString() }
+// const claims = process.env.CLAIMS === 'true'
+const reload = process.env.RELOAD_SW === 'true'
+// const selfDestroying = process.env.SW_DESTROY === 'true'
+if (reload) {
+	// @ts-expect-error just ignore
+	replaceOptions.__RELOAD_SW__ = 'true'
+  }
 
 // https://vitejs.dev/config/
 export default defineConfig({
 	plugins: [
+		replace(replaceOptions) as Plugin,
 		react(),
 		VitePWA({
 			// registerType: "autoUpdate",
@@ -41,6 +52,7 @@ export default defineConfig({
 				enabled: true,
 			},
 		}),
+		
 	],
 	base: "/react_pwa/",
 });
