@@ -15,7 +15,7 @@ function App() {
 	return (
 		<>
 			<div>
-				Mode: {baseUrl()}
+				<h1>Mode: {baseUrl()} is on... </h1>
 				<a href="https://vitejs.dev" target="_blank" rel="noreferrer">
 					<img src={viteLogo} className="logo" alt="Vite logo" />
 				</a>
