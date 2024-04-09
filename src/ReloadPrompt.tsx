@@ -18,17 +18,18 @@ function ReloadPrompt() {
   } = useRegisterSW({
     onRegisteredSW(swUrl, r) {
       console.log(`Service Worker at: ${swUrl}`)
-      // @ts-expect-error just ignore
-      if (reloadSW === 'true') {
-        r && setInterval(() => {
-          console.log('Checking for sw update')
-          r.update()
-        }, 20000 /* 20s for testing purposes */)
-      }
-      else {
-        // eslint-disable-next-line prefer-template
+      // // @ts-expect-error just ignore
+    //   if (reloadSW === 'true') {
+    //     r && setInterval(() => {
+    //       console.log('Checking for sw update')
+    //       r.update()
+    //     }, 20000 /* 20s for testing purposes */)
+    //   }
+    //   else {
+    //     // eslint-disable-next-line prefer-template
+    //     console.log('SW Registered: ' + r)
+    //   }
         console.log('SW Registered: ' + r)
-      }
     },
     onRegisterError(error) {
       console.log('SW registration error', error)
