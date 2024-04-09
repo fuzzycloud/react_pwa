@@ -9,7 +9,7 @@ function ReloadPrompt() {
   // replaced dynamically
   const buildDate = '__DATE__'
   // replaced dyanmicaly
-  const reloadSW = '__RELOAD_SW__'
+//   const reloadSW = '__RELOAD_SW__'
 
   const {
     offlineReady: [offlineReady, setOfflineReady],
