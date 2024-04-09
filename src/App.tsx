@@ -6,10 +6,7 @@ import ReloadPrompt from "./ReloadPrompt";
 
 function baseUrl() {
 	const base = import.meta.env.MODE;
-	if (base === "development") {
-		return "http://localhost:5137/"
-	}
-	return "https://fuzzycloud.github.io/react_pwa/";
+	return base;
 }
 
 function App() {
